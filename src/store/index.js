@@ -12,7 +12,8 @@ export default new Vuex.Store({
     initTodo(state,todo){
       state.todos.push({
         todo:todo,
-        id:state.count+1
+        id:state.count+1,
+        active:false
       })
       state.count++
     },
@@ -20,6 +21,12 @@ export default new Vuex.Store({
       let index = state.todos.findIndex((item) => item.id === todo.id);
       console.log(index)
       state.todos.splice(index, 1);
+    },
+    okeyTodo(state,todo){
+      let index = state.todos.findIndex((item) => item.id === todo.id)
+      console.log(index)
+      state.todos[index].active = true
+      console.log(state.todos[index])
     }
   },
   actions: {

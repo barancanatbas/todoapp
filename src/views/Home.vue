@@ -36,14 +36,12 @@ export default {
   computed: mapState({
     todos(state){
       return state.todos
-    }
-  }),
-  methods:{
+    },
     Add(){
       store.commit("initTodo",this.todo)
       this.todo = ""
     }
-  }
+  }),
 }
 </script>
 
